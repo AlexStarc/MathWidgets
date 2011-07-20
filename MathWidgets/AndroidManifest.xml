@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*****************************************************************************
+ *  Copyright 2011 Alex Starchenko (sandrstar at hotmail dot com)            *
+ *****************************************************************************/
+
+/*
+ * This work is licensed under the Creative Commons Attribution 3.0 Unported License.
+ * To view a copy of this license, visit http://creativecommons.org/licenses/by/3.0/
+ * or send a letter to Creative Commons, 444 Castro Street, Suite 900,
+ * Mountain View, California, 94041, USA.
+ */
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.sandrstar.android.mathwidgets"
+      android:versionCode="1"
+      android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="7" />
+
+    <application android:label="@string/app_name">
+    </application>
+</manifest>
