@@ -12,6 +12,7 @@
 package com.sandrstar.android.mathwidgetstest;
 
 import android.app.Activity;
+import android.os.Bundle;
 
 /**
  * @author Alex Starchenko (sandrstar at hotmail dot com)
@@ -19,4 +20,11 @@ import android.app.Activity;
  */
 public class MathWidgetsTestActivity extends Activity {
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.main);
+    }
 }

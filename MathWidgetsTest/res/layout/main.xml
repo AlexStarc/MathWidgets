@@ -11,14 +11,66 @@
  * Mountain View, California, 94041, USA.
  */
 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
-<TextView  
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@string/hello"
-    />
-</LinearLayout>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res/com.sandrstar.android.mathwidgetstest"
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+    <com.sandrstar.android.mathwidgets.FractionLineNumber
+        android:id="@+id/fractionLineNumber1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        app:textSize="20sp"
+        app:lineWeight="2dp"
+        app:upText="175"
+        app:downText="15000" />
+    <com.sandrstar.android.mathwidgets.FractionLineNumber
+        android:id="@+id/fractionLineNumber2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/fractionLineNumber1"
+        android:layout_marginLeft="10dp"
+        app:textSize="25sp"
+        app:lineWeight="3dp"
+        app:upText="17575"
+        app:downText="15" />
+    <com.sandrstar.android.mathwidgets.FractionLineNumber
+        android:id="@+id/fractionLineNumber3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/fractionLineNumber2"
+        android:layout_marginLeft="10dp"
+        app:textSize="15sp"
+        app:lineWeight="2dp"
+        app:upText="50"
+        app:downText="15"
+        app:textColor="#FF0000" />
+    <com.sandrstar.android.mathwidgets.FractionLineNumber
+        android:id="@+id/fractionLineNumber4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/fractionLineNumber3"
+        android:layout_marginLeft="10dp"
+        app:textSize="15sp"
+        app:lineWeight="1dp"
+        app:upText="5000000"
+        app:downText="15"
+        app:textColor="#00FFF0"
+        app:textStyle="italic"
+        app:typeface="sans" />
+    <com.sandrstar.android.mathwidgets.FractionLineNumber
+        android:id="@+id/fractionLineNumber5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fractionLineNumber1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        app:textSize="18sp"
+        app:lineWeight="1dp"
+        app:upText="5000000"
+        app:downText="15"
+        app:textColor="#00FF00"
+        app:textStyle="bold"
+        app:typeface="sans" />
+</RelativeLayout>

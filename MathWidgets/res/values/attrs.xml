@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*****************************************************************************
+ *  Copyright 2011 Alex Starchenko (sandrstar at hotmail dot com)            *
+ *****************************************************************************/
+
+/*
+ * This work is licensed under the Creative Commons Attribution 3.0 Unported License.
+ * To view a copy of this license, visit http://creativecommons.org/licenses/by/3.0/
+ * or send a letter to Creative Commons, 444 Castro Street, Suite 900,
+ * Mountain View, California, 94041, USA.
+ */
+-->
+<resources>
+    <declare-styleable name="FractionLineNumber">
+        <attr name="upText"             format="string" />
+        <attr name="downText"           format="string" />
+        <attr name="textColor"          format="color" />
+        <attr name="textSize"           format="dimension" />
+        <attr name="lineWeight" format="dimension" />
+        <attr name="textStyle">
+            <enum name="normal" value="0" />
+            <enum name="bold"   value="1" />
+            <enum name="italic" value="2" />
+        </attr>
+        <attr name="typeface">
+            <enum name="normal"    value="0" />
+            <enum name="sans"      value="1" />
+            <enum name="serif"     value="2" />
+            <enum name="monospace" value="3" />
+        </attr>
+        
+    </declare-styleable>
+</resources>

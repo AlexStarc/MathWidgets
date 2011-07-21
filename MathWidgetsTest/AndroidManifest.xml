@@ -20,7 +20,12 @@
                      android:name="android.test.InstrumentationTestRunner" />
     <application android:icon="@drawable/icon"
                  android:label="@string/app_name">
-
-    <uses-library android:name="android.test.runner" />
+        <uses-library android:name="android.test.runner" />
+        <activity android:name="MathWidgetsTestActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 </manifest>
