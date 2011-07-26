@@ -14,8 +14,8 @@ package com.sandrstar.android.mathwidgetstest;
 import android.util.Log;
 
 public class MathWidgetsTest extends android.test.ActivityInstrumentationTestCase2<MathWidgetsTestActivity> {
+    @SuppressWarnings("unused")
     private MathWidgetsTestActivity mActivity = null;
-    private final Integer TESTTIMEOUT = 120000;
     private final static String TAG = MathWidgetsTest.class.getSimpleName();
     enum MathWidgetsTestStatus {
         COMPLETE,

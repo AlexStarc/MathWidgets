@@ -57,7 +57,12 @@ public class FractionLineNumber extends android.view.View {
      */
     private int mWidth = 0;
     private int mHeight = 0;
-    private int mXOffset = 0;
+    /** Flag to indicate which text (top or down) is longer */
+    private boolean mUpAlign = false;
+    /** Offset for down text, to draw it centered */
+    private int mXDownOffset;
+    /** Offset for up text, to draw it centered */
+    private int mXUpOffset;
 
     /**
      * Simple constructor to use when creating a view from code.
@@ -433,17 +438,17 @@ public class FractionLineNumber extends android.view.View {
         final Rect clipRect = canvas.getClipBounds();
 
         // Draw up text
-        canvas.translate(clipRect.left + getPaddingLeft() + this.mXOffset,
+        canvas.translate(clipRect.left + getPaddingLeft() + this.mXUpOffset,
                          clipRect.top + getPaddingTop() + (-this.mTextPaint.ascent() + this.mTextPaint.descent()));
         canvas.drawText(this.mUpText, 0, 0, this.mTextPaint);
 
         // Draw middle line
-        canvas.translate(-this.mXOffset,
+        canvas.translate(-this.mXUpOffset,
                          this.spacing + this.mLineWeight);
         canvas.drawRect(0, 0, this.mWidth, this.mLineWeight, this.mLinePaint);
 
         // Draw down text
-        canvas.translate(this.mXOffset,
+        canvas.translate(this.mXDownOffset,
                          (-this.mTextPaint.ascent() + this.mTextPaint.descent()));
         canvas.drawText(this.mDownText, 0, 0, this.mTextPaint);
 
@@ -454,13 +459,35 @@ public class FractionLineNumber extends android.view.View {
      * Validates mWidth and mHeight variables or calculates them for first time
      */
     private void validateDimensions() {
-        this.mWidth = (int)(Math.max(this.mTextPaint.measureText(this.mUpText),
-                                     this.mTextPaint.measureText(this.mDownText)) +
-                            this.spacing * 2);
+
+        int downWidth = (int)this.mTextPaint.measureText(this.mDownText);
+        int upWidth = (int)this.mTextPaint.measureText(this.mUpText);
+
+        if(downWidth < upWidth) {
+
+            this.mUpAlign = true;
+        }
+        else {
+
+            this.mUpAlign = false;
+        }
+
+        this.mWidth = Math.max(downWidth, upWidth) +
+                      this.spacing * 2;
+
+        if(this.mUpAlign) {
+
+            this.mXDownOffset = (int) (((float)this.mWidth / 2) - ((float)downWidth / 2));
+            this.mXUpOffset = this.spacing;
+        } else {
+
+            this.mXUpOffset = (int) (((float)this.mWidth / 2) - ((float)upWidth / 2));
+            this.mXDownOffset = this.spacing;
+        }
+
         this.mHeight = (int)((-this.mTextPaint.ascent() + this.mTextPaint.descent()) * 2 +
                              this.spacing * 2 +
                              this.mLineWeight);
 
-        this.mXOffset = this.spacing;
     }
 }
